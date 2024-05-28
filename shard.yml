@@ -1,0 +1,17 @@
+name: google
+version: 0.1.0
+
+authors:
+  - Jamie Gaskins <jgaskins@hey.com>
+
+dependencies:
+  db:
+    github: crystal-lang/crystal-db
+  msgpack:
+    github: crystal-community/msgpack-crystal
+  jwt:
+    github: crystal-community/jwt
+
+crystal: 1.8.2
+
+license: MIT

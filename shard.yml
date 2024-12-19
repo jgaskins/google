@@ -5,13 +5,15 @@ authors:
   - Jamie Gaskins <jgaskins@hey.com>
 
 dependencies:
-  db:
-    github: crystal-lang/crystal-db
+  http_client:
+    github: jgaskins/http_client
   msgpack:
     github: crystal-community/msgpack-crystal
   jwt:
     github: crystal-community/jwt
+  json-schema:
+    github: spider-gazelle/json-schema
 
-crystal: 1.8.2
+crystal: 1.13.0
 
 license: MIT

@@ -36,9 +36,29 @@ require "google/calendar"
 require "google/cloud/storage"
 require "google/drive"
 require "google/people"
+require "google/gemini"
 ```
 
 API docs are forthcoming.
+
+### Using the GenerativeAI API (Gemini)
+
+```crystal
+require "google/gemini"
+
+client = Google::GenerativeAI::Client.new(gemini_api_key)
+
+gemini = client.model(
+  "models/gemini-2.0-flash-exp",
+  system_instruction: [<<-MALAKAI],
+    You are a helpful assistant.
+    MALAKAI
+  temperature: 0.4,
+)
+
+puts gemini.generate(<<-PROMPT)
+  Write a limerick about the Crystal programming language.
+  PROMPT
 
 ## Contributing
 

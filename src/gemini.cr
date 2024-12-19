@@ -189,7 +189,7 @@ module Google
     struct GenerateContentRequest(Tools)
       include Resource
 
-      field contents : Array(Content)
+      field contents : String | Array(Content)
       field tools : Tools
       field generation_config : GenerationConfig?
       field system_instruction : Content?
@@ -447,6 +447,10 @@ module Google
         array.map do |stuff|
           content stuff
         end
+      end
+
+      def contents(string : String) : Array(Content)
+        contents [string]
       end
 
       def content(strings : Array(String)) : Content

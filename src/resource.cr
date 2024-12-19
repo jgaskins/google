@@ -12,23 +12,25 @@ module Google
       # UNCOMMENT WHEN WE NEED TO DEBUG
       # include JSON::Serializable::Unmapped
       # include MessagePack::Serializable::Unmapped
+      # @[JSON::Field(ignore: true)]
       # @[MessagePack::Field(ignore: true)]
       # getter json_unmapped : Hash(String, JSON::Any)
       # @[JSON::Field(ignore: true)]
+      # @[MessagePack::Field(ignore: true)]
       # getter msgpack_unmapped : Hash(String, MessagePack::Type)
     end
 
-    macro field(var, key = nil, &block)
-      @[JSON::Field(key: {{key ? key : var.var.camelcase(lower: true).stringify}})]
-      @[MessagePack::Field(key: {{key ? key : var.var.camelcase(lower: true).stringify}})]
-      getter {{var}} {{block}}
+    private macro define_field(*suffixes)
+      {% for suffix in suffixes %}
+        macro field{{suffix.id}}(var, key = nil, **options, &block)
+          @[JSON::Field(key: \{{key ? key : var.var.camelcase(lower: true).stringify}}\{% for k, v in options %}, \{{k}}: \{{v}}\{% end %})]
+          @[MessagePack::Field(key: \{{key ? key : var.var.camelcase(lower: true).stringify}}\{% for k, v in options %}, \{{k}}: \{{v}}\{% end %})]
+          getter{{suffix.id}} \{{var}} \{{block}}
+        end
+      {% end %}
     end
 
-    macro field?(var, key = nil, &block)
-      @[JSON::Field(key: {{key ? key : var.var.camelcase(lower: true).stringify}})]
-      @[MessagePack::Field(key: {{key ? key : var.var.camelcase(lower: true).stringify}})]
-      getter? {{var}} {{block}}
-    end
+    define_field "", "!", "?"
   end
 end
 

@@ -35,8 +35,10 @@ require "google/auth"
 require "google/calendar"
 require "google/cloud/storage"
 require "google/drive"
-require "google/people"
 require "google/gemini"
+require "google/maps"
+require "google/people"
+require "google/tasks"
 ```
 
 API docs are forthcoming.

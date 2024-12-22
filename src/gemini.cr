@@ -22,8 +22,9 @@ module Google
         end
       end
 
-      def models(page_size : Int? = nil, page_token : String? = nil)
-        get "/v1beta/models", return: JSON::Any
+      def models(page_size : Int? = nil, page_token : String? = nil, response_schema = nil)
+        result = get "/v1beta/models", return: ModelsResponse(typeof(response_schema))
+        result.models.map(&.with_client(client: self))
       end
 
       def model(name : String, system_instruction = nil, temperature : Float64? = nil, response_schema = nil)
@@ -68,13 +69,19 @@ module Google
       {% end %}
     end
 
+    struct ModelsResponse(ResponseSchema)
+      include Resource
+
+      getter models : Array(Model::V1Beta(ResponseSchema))
+    end
+
     struct Model::V1Beta(ResponseSchema)
       include Resource
 
       # https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=$API_KEY
 
       field name : String
-      field temperature : Float64
+      field temperature : Float64?
       setter temperature
       field output_token_limit : Int64
       field input_token_limit : Int64
@@ -94,7 +101,7 @@ module Google
         "user-agent"   => "https://github.com/jgaskins/google",
       }
 
-      def generate(contents : String | Array, generation_config : GenerationConfig? = nil, tools : Tools? = nil)
+      def generate(contents : String | Array, generation_config : GenerationConfig? = self.generation_config, tools : Tools? = nil)
         contents = ContentTransformer.new.contents(contents)
         # converted_tools = Tools.new(tools) if tools
 
@@ -175,15 +182,27 @@ module Google
           temperature: temperature,
         )
       end
+
+      protected def with_client(@client) : self
+        self
+      end
     end
 
-    struct GenerationConfig
-      include Resource
-
-      getter temperature : Float64?
-
-      def initialize(*, @temperature)
-      end
+    Resource.define GenerationConfig,
+      temperature : Float64? = nil,
+      top_p : Float64? = nil,
+      top_k : Float64? = nil,
+      max_output_tokens : Int32? = nil,
+      stop_sequences : Array(String)? = nil,
+      response_mime_type : String? = nil,
+      response_schema : String? = nil,
+      candidate_count : Int32? = nil,
+      presence_penalty : Float64? = nil,
+      frequency_penalty : Float64? = nil,
+      response_logprobs : Bool? = nil,
+      logprobs : Int32? = nil do
+      @[JSON::Field(converter: ::String::RawConverter)]
+      @response_schema : String?
     end
 
     struct GenerateContentRequest(Tools)
@@ -222,7 +241,7 @@ module Google
       struct Candidate
         include Resource
 
-        field content : Content
+        field content : Content = Content.new
         field finish_reason : String # FIXME: make this an enum
         field index : Int64? = nil
         field safety_ratings : Array(SafetyRating) { [] of SafetyRating }
@@ -259,7 +278,7 @@ module Google
         }
       end
 
-      def initialize(@parts, @role = :user)
+      def initialize(@parts = [] of Part, @role = :user)
       end
 
       def to_s(io) : Nil

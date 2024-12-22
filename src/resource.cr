@@ -20,6 +20,26 @@ module Google
       # getter msgpack_unmapped : Hash(String, MessagePack::Type)
     end
 
+    macro define(name, *fields)
+      struct {{name}}
+        include ::Google::Resource
+
+        {% for field in fields %}
+          field {{field}}
+        {% end %}
+
+        def initialize(
+          *,
+          {% for field in fields %}
+            @{{field.var}}{% unless field.value.is_a? Nop %} = {{field.value}}{% end %},
+          {% end %}
+        )
+        end
+
+        {{yield}}
+      end
+    end
+
     private macro define_field(*suffixes)
       {% for suffix in suffixes %}
         macro field{{suffix.id}}(var, key = nil, **options, &block)

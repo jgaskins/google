@@ -6,9 +6,12 @@ Currently supported APIs:
 
 - Auth (limited)
 - Calendar (getting there)
-- Cloud Storage
+- Cloud Storage/GCS
 - Drive (limited)
+- GenerativeAI/Gemini
+- Maps (vestigial)
 - People (self-identification only)
+- Tasks
 
 ## Installation
 

@@ -59,6 +59,7 @@ gemini = client.model(
 puts gemini.generate(<<-PROMPT)
   Write a limerick about the Crystal programming language.
   PROMPT
+```
 
 ## Contributing
 

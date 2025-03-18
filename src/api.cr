@@ -9,7 +9,6 @@ module Google
 
     macro discover(url)
       {{run "../discover", url}}
-      {% debug %}
     end
   end
 end

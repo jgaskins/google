@@ -119,6 +119,7 @@ struct Google::Calendar::V3
       OutOfOffice
       FocusTime
       WorkingLocation
+      FromGmail
     end
 
     struct Reminders

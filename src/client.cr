@@ -111,13 +111,13 @@ module Google
       end
     end
 
-    def get(path : String, token : String, headers = HTTP::Headers{"Authorization" => "Bearer #{token}"})
+    def get(path : String, token : String, headers = HTTP::Headers.new, &)
       headers = headers.dup
       headers["authorization"] = "Bearer #{token}"
       @pool.checkout(&.get(path, headers: DEFAULT_HEADERS.dup.merge!(headers)) { |response| yield response })
     end
 
-    def post(path : String, token : String, body, headers = HTTP::Headers{"Authorization" => "Bearer #{token}"})
+    def post(path : String, token : String, body, headers = HTTP::Headers.new, &)
       headers = DEFAULT_HEADERS.dup.merge!(headers)
       headers["authorization"] = "Bearer #{token}"
       @pool.checkout(&.post(path, headers: headers, body: body.to_json) { |response| yield response })

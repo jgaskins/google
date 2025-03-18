@@ -5,7 +5,11 @@ require "./calendar"
 struct Google::Calendar::V3
   struct Calendars < API
     def list(token : String)
-      http_get("/calendars", token: token, as: CalendarList)
+      http_get("/calendars", token: token, as: CalendarList::Response)
+    end
+
+    def get(calendar_list_entry : CalendarList::Entry, token : String)
+      get calendar_list_entry.id, token: token
     end
 
     def get(id : String, token : String)

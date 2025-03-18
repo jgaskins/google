@@ -9,8 +9,10 @@ Currently supported APIs:
 - Cloud Storage/GCS
 - Drive (limited)
 - GenerativeAI/Gemini
+- Gmail
 - Maps (vestigial)
 - People (self-identification only)
+- Places
 - Tasks
 
 ## Installation
@@ -44,8 +46,6 @@ require "google/people"
 require "google/tasks"
 ```
 
-API docs are forthcoming.
-
 ### Using the GenerativeAI API (Gemini)
 
 ```crystal
@@ -55,9 +55,9 @@ client = Google::GenerativeAI::Client.new(gemini_api_key)
 
 gemini = client.model(
   "models/gemini-2.0-flash-exp",
-  system_instruction: [<<-MALAKAI],
+  system_instruction: [<<-PROMPT],
     You are a helpful assistant.
-    MALAKAI
+    PROMPT
   temperature: 0.4,
 )
 

@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.10.1">
+<meta name="crystal_docs.project_version" content="main-dev">
+<meta name="crystal_docs.project_name" content="google">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="google">
+  <title>Google::Maps - google main-dev</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          google
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main-dev
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="google/Google" data-name="google">
+      <a href="../Google.html">Google</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/API" data-name="google::api">
+      <a href="../Google/API.html">API</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Auth" data-name="google::auth">
+      <a href="../Google/Auth.html">Auth</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Auth/V2" data-name="google::auth::v2">
+      <a href="../Google/Auth/V2.html">V2</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Calendar" data-name="google::calendar">
+      <a href="../Google/Calendar.html">Calendar</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="google/Google/Calendar/V3" data-name="google::calendar::v3">
+      <a href="../Google/Calendar/V3.html">V3</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Attendee" data-name="google::calendar::v3::attendee">
+      <a href="../Google/Calendar/V3/Attendee.html">Attendee</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Calendar/V3/Calendar" data-name="google::calendar::v3::calendar">
+      <a href="../Google/Calendar/V3/Calendar.html">Calendar</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Calendar/ConferenceProperties" data-name="google::calendar::v3::calendar::conferenceproperties">
+      <a href="../Google/Calendar/V3/Calendar/ConferenceProperties.html">ConferenceProperties</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Calendar/V3/CalendarList" data-name="google::calendar::v3::calendarlist">
+      <a href="../Google/Calendar/V3/CalendarList.html">CalendarList</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/CalendarList/CalendarListResponse" data-name="google::calendar::v3::calendarlist::calendarlistresponse">
+      <a href="../Google/Calendar/V3/CalendarList/CalendarListResponse.html">CalendarListResponse</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Calendar/V3/CalendarList/Entry" data-name="google::calendar::v3::calendarlist::entry">
+      <a href="../Google/Calendar/V3/CalendarList/Entry.html">Entry</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/CalendarList/Entry/AccessRole" data-name="google::calendar::v3::calendarlist::entry::accessrole">
+      <a href="../Google/Calendar/V3/CalendarList/Entry/AccessRole.html">AccessRole</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/CalendarList/Entry/ConferenceProperties" data-name="google::calendar::v3::calendarlist::entry::conferenceproperties">
+      <a href="../Google/Calendar/V3/CalendarList/Entry/ConferenceProperties.html">ConferenceProperties</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Calendar/V3/CalendarList/Entry/NotificationSettings" data-name="google::calendar::v3::calendarlist::entry::notificationsettings">
+      <a href="../Google/Calendar/V3/CalendarList/Entry/NotificationSettings.html">NotificationSettings</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="google/Google/Calendar/V3/CalendarList/Entry/NotificationSettings/NotificationSetting" data-name="google::calendar::v3::calendarlist::entry::notificationsettings::notificationsetting">
+      <a href="../Google/Calendar/V3/CalendarList/Entry/NotificationSettings/NotificationSetting.html">NotificationSetting</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/CalendarList/Entry/NotificationSettings/NotificationSetting/Method" data-name="google::calendar::v3::calendarlist::entry::notificationsettings::notificationsetting::method">
+      <a href="../Google/Calendar/V3/CalendarList/Entry/NotificationSettings/NotificationSetting/Method.html">Method</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/CalendarList/Entry/NotificationSettings/NotificationSetting/Type" data-name="google::calendar::v3::calendarlist::entry::notificationsettings::notificationsetting::type">
+      <a href="../Google/Calendar/V3/CalendarList/Entry/NotificationSettings/NotificationSetting/Type.html">Type</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Calendar/V3/CalendarList/Entry/Reminder" data-name="google::calendar::v3::calendarlist::entry::reminder">
+      <a href="../Google/Calendar/V3/CalendarList/Entry/Reminder.html">Reminder</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/CalendarList/Entry/Reminder/Method" data-name="google::calendar::v3::calendarlist::entry::reminder::method">
+      <a href="../Google/Calendar/V3/CalendarList/Entry/Reminder/Method.html">Method</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Calendars" data-name="google::calendar::v3::calendars">
+      <a href="../Google/Calendar/V3/Calendars.html">Calendars</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Calendar/V3/ConferenceData" data-name="google::calendar::v3::conferencedata">
+      <a href="../Google/Calendar/V3/ConferenceData.html">ConferenceData</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="google/Google/Calendar/V3/ConferenceData/CreateRequest" data-name="google::calendar::v3::conferencedata::createrequest">
+      <a href="../Google/Calendar/V3/ConferenceData/CreateRequest.html">CreateRequest</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/ConferenceData/CreateRequest/Status" data-name="google::calendar::v3::conferencedata::createrequest::status">
+      <a href="../Google/Calendar/V3/ConferenceData/CreateRequest/Status.html">Status</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/ConferenceSolution" data-name="google::calendar::v3::conferencesolution">
+      <a href="../Google/Calendar/V3/ConferenceSolution.html">ConferenceSolution</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/ConferenceSolutionKey" data-name="google::calendar::v3::conferencesolutionkey">
+      <a href="../Google/Calendar/V3/ConferenceSolutionKey.html">ConferenceSolutionKey</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Calendar/V3/Date" data-name="google::calendar::v3::date">
+      <a href="../Google/Calendar/V3/Date.html">Date</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Date/DateConverter" data-name="google::calendar::v3::date::dateconverter">
+      <a href="../Google/Calendar/V3/Date/DateConverter.html">DateConverter</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Entrypoint" data-name="google::calendar::v3::entrypoint">
+      <a href="../Google/Calendar/V3/Entrypoint.html">Entrypoint</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Calendar/V3/Event" data-name="google::calendar::v3::event">
+      <a href="../Google/Calendar/V3/Event.html">Event</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Event/EventType" data-name="google::calendar::v3::event::eventtype">
+      <a href="../Google/Calendar/V3/Event/EventType.html">EventType</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Event/ExtendedProperties" data-name="google::calendar::v3::event::extendedproperties">
+      <a href="../Google/Calendar/V3/Event/ExtendedProperties.html">ExtendedProperties</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Calendar/V3/Event/Reminders" data-name="google::calendar::v3::event::reminders">
+      <a href="../Google/Calendar/V3/Event/Reminders.html">Reminders</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Event/Reminders/Override" data-name="google::calendar::v3::event::reminders::override">
+      <a href="../Google/Calendar/V3/Event/Reminders/Override.html">Override</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Event/Status" data-name="google::calendar::v3::event::status">
+      <a href="../Google/Calendar/V3/Event/Status.html">Status</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Event/Visibility" data-name="google::calendar::v3::event::visibility">
+      <a href="../Google/Calendar/V3/Event/Visibility.html">Visibility</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Calendar/V3/Events" data-name="google::calendar::v3::events">
+      <a href="../Google/Calendar/V3/Events.html">Events</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Events/Attachment" data-name="google::calendar::v3::events::attachment">
+      <a href="../Google/Calendar/V3/Events/Attachment.html">Attachment</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Events/EventsInsertRequest" data-name="google::calendar::v3::events::eventsinsertrequest">
+      <a href="../Google/Calendar/V3/Events/EventsInsertRequest.html">EventsInsertRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Events/SendUpdates" data-name="google::calendar::v3::events::sendupdates">
+      <a href="../Google/Calendar/V3/Events/SendUpdates.html">SendUpdates</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/EventsListResponse" data-name="google::calendar::v3::eventslistresponse">
+      <a href="../Google/Calendar/V3/EventsListResponse.html">EventsListResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Person" data-name="google::calendar::v3::person">
+      <a href="../Google/Calendar/V3/Person.html">Person</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/ResponseStatus" data-name="google::calendar::v3::responsestatus">
+      <a href="../Google/Calendar/V3/ResponseStatus.html">ResponseStatus</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Calendar/V3/Timestamp" data-name="google::calendar::v3::timestamp">
+      <a href="../Google/Calendar/V3/Timestamp.html">Timestamp</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Client" data-name="google::client">
+      <a href="../Google/Client.html">Client</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Client/AccessType" data-name="google::client::accesstype">
+      <a href="../Google/Client/AccessType.html">AccessType</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Client/Prompt" data-name="google::client::prompt">
+      <a href="../Google/Client/Prompt.html">Prompt</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Cloud" data-name="google::cloud">
+      <a href="../Google/Cloud.html">Cloud</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="google/Google/Cloud/Storage" data-name="google::cloud::storage">
+      <a href="../Google/Cloud/Storage.html">Storage</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Cloud/Storage/Buckets" data-name="google::cloud::storage::buckets">
+      <a href="../Google/Cloud/Storage/Buckets.html">Buckets</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Cloud/Storage/Object" data-name="google::cloud::storage::object">
+      <a href="../Google/Cloud/Storage/Object.html">Object</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Cloud/Storage/Objects" data-name="google::cloud::storage::objects">
+      <a href="../Google/Cloud/Storage/Objects.html">Objects</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Cloud/Storage/Tasks" data-name="google::cloud::storage::tasks">
+      <a href="../Google/Cloud/Storage/Tasks.html">Tasks</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Cloud/Storage/Tasks/List" data-name="google::cloud::storage::tasks::list(t)">
+      <a href="../Google/Cloud/Storage/Tasks/List.html">List</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Drive" data-name="google::drive">
+      <a href="../Google/Drive.html">Drive</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="google/Google/Drive/V3" data-name="google::drive::v3">
+      <a href="../Google/Drive/V3.html">V3</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Drive/V3/Comment" data-name="google::drive::v3::comment">
+      <a href="../Google/Drive/V3/Comment.html">Comment</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Drive/V3/CommentData" data-name="google::drive::v3::commentdata">
+      <a href="../Google/Drive/V3/CommentData.html">CommentData</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Drive/V3/CommentList" data-name="google::drive::v3::commentlist">
+      <a href="../Google/Drive/V3/CommentList.html">CommentList</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Drive/V3/Comments" data-name="google::drive::v3::comments">
+      <a href="../Google/Drive/V3/Comments.html">Comments</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Drive/V3/Drive" data-name="google::drive::v3::drive">
+      <a href="../Google/Drive/V3/Drive.html">Drive</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Drive/V3/Drive/BackgroundImageFile" data-name="google::drive::v3::drive::backgroundimagefile">
+      <a href="../Google/Drive/V3/Drive/BackgroundImageFile.html">BackgroundImageFile</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Drive/V3/Drive/Capabilities" data-name="google::drive::v3::drive::capabilities">
+      <a href="../Google/Drive/V3/Drive/Capabilities.html">Capabilities</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Drive/V3/DriveList" data-name="google::drive::v3::drivelist">
+      <a href="../Google/Drive/V3/DriveList.html">DriveList</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Drive/V3/Drives" data-name="google::drive::v3::drives">
+      <a href="../Google/Drive/V3/Drives.html">Drives</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Drive/V3/File" data-name="google::drive::v3::file">
+      <a href="../Google/Drive/V3/File.html">File</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Drive/V3/FileList" data-name="google::drive::v3::filelist">
+      <a href="../Google/Drive/V3/FileList.html">FileList</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Drive/V3/Files" data-name="google::drive::v3::files">
+      <a href="../Google/Drive/V3/Files.html">Files</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Drive/V3/QuotedFileContent" data-name="google::drive::v3::quotedfilecontent">
+      <a href="../Google/Drive/V3/QuotedFileContent.html">QuotedFileContent</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Drive/V3/Reply" data-name="google::drive::v3::reply">
+      <a href="../Google/Drive/V3/Reply.html">Reply</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Drive/V3/User" data-name="google::drive::v3::user">
+      <a href="../Google/Drive/V3/User.html">User</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Duration" data-name="google::duration">
+      <a href="../Google/Duration.html">Duration</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Error" data-name="google::error">
+      <a href="../Google/Error.html">Error</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/GenerativeAI" data-name="google::generativeai">
+      <a href="../Google/GenerativeAI.html">GenerativeAI</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/Client" data-name="google::generativeai::client">
+      <a href="../Google/GenerativeAI/Client.html">Client</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/GenerativeAI/Content" data-name="google::generativeai::content">
+      <a href="../Google/GenerativeAI/Content.html">Content</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="google/Google/GenerativeAI/Content/CodeExecutionResult" data-name="google::generativeai::content::codeexecutionresult">
+      <a href="../Google/GenerativeAI/Content/CodeExecutionResult.html">CodeExecutionResult</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/Content/CodeExecutionResult/Outcome" data-name="google::generativeai::content::codeexecutionresult::outcome">
+      <a href="../Google/GenerativeAI/Content/CodeExecutionResult/Outcome.html">Outcome</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/GenerativeAI/Content/ExecutableCode" data-name="google::generativeai::content::executablecode">
+      <a href="../Google/GenerativeAI/Content/ExecutableCode.html">ExecutableCode</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/Content/ExecutableCode/Language" data-name="google::generativeai::content::executablecode::language">
+      <a href="../Google/GenerativeAI/Content/ExecutableCode/Language.html">Language</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/Content/FileData" data-name="google::generativeai::content::filedata">
+      <a href="../Google/GenerativeAI/Content/FileData.html">FileData</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/Content/FunctionCall" data-name="google::generativeai::content::functioncall">
+      <a href="../Google/GenerativeAI/Content/FunctionCall.html">FunctionCall</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/Content/FunctionResponse" data-name="google::generativeai::content::functionresponse">
+      <a href="../Google/GenerativeAI/Content/FunctionResponse.html">FunctionResponse</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/GenerativeAI/Content/InlineData" data-name="google::generativeai::content::inlinedata">
+      <a href="../Google/GenerativeAI/Content/InlineData.html">InlineData</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/Content/InlineData/Blob" data-name="google::generativeai::content::inlinedata::blob">
+      <a href="../Google/GenerativeAI/Content/InlineData/Blob.html">Blob</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/Content/Part" data-name="google::generativeai::content::part">
+      <a href="../Google/GenerativeAI/Content/Part.html">Part</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/Content/Role" data-name="google::generativeai::content::role">
+      <a href="../Google/GenerativeAI/Content/Role.html">Role</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/Content/Text" data-name="google::generativeai::content::text">
+      <a href="../Google/GenerativeAI/Content/Text.html">Text</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/GenerateContentRequest" data-name="google::generativeai::generatecontentrequest(tools)">
+      <a href="../Google/GenerativeAI/GenerateContentRequest.html">GenerateContentRequest</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/GenerativeAI/GenerateContentResponse" data-name="google::generativeai::generatecontentresponse">
+      <a href="../Google/GenerativeAI/GenerateContentResponse.html">GenerateContentResponse</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/GenerateContentResponse/Candidate" data-name="google::generativeai::generatecontentresponse::candidate">
+      <a href="../Google/GenerativeAI/GenerateContentResponse/Candidate.html">Candidate</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/GenerateContentResponse/SafetyRating" data-name="google::generativeai::generatecontentresponse::safetyrating">
+      <a href="../Google/GenerativeAI/GenerateContentResponse/SafetyRating.html">SafetyRating</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/GenerateContentResponse/UsageMetadata" data-name="google::generativeai::generatecontentresponse::usagemetadata">
+      <a href="../Google/GenerativeAI/GenerateContentResponse/UsageMetadata.html">UsageMetadata</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/GenerationConfig" data-name="google::generativeai::generationconfig">
+      <a href="../Google/GenerativeAI/GenerationConfig.html">GenerationConfig</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/GenerativeAI/Model" data-name="google::generativeai::model">
+      <a href="../Google/GenerativeAI/Model.html">Model</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/Model/V1Beta" data-name="google::generativeai::model::v1beta(responseschema)">
+      <a href="../Google/GenerativeAI/Model/V1Beta.html">V1Beta</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/ModelsResponse" data-name="google::generativeai::modelsresponse(responseschema)">
+      <a href="../Google/GenerativeAI/ModelsResponse.html">ModelsResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/TokenCount" data-name="google::generativeai::tokencount">
+      <a href="../Google/GenerativeAI/TokenCount.html">TokenCount</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/GenerativeAI/Tools" data-name="google::generativeai::tools(t)">
+      <a href="../Google/GenerativeAI/Tools.html">Tools</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Gmail" data-name="google::gmail">
+      <a href="../Google/Gmail.html">Gmail</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="google/Google/Gmail/V1" data-name="google::gmail::v1">
+      <a href="../Google/Gmail/V1.html">V1</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Gmail/V1/Header" data-name="google::gmail::v1::header">
+      <a href="../Google/Gmail/V1/Header.html">Header</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Gmail/V1/Message" data-name="google::gmail::v1::message">
+      <a href="../Google/Gmail/V1/Message.html">Message</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Gmail/V1/MessagePart" data-name="google::gmail::v1::messagepart">
+      <a href="../Google/Gmail/V1/MessagePart.html">MessagePart</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Gmail/V1/MessagePart/Body" data-name="google::gmail::v1::messagepart::body">
+      <a href="../Google/Gmail/V1/MessagePart/Body.html">Body</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Gmail/V1/Thread" data-name="google::gmail::v1::thread">
+      <a href="../Google/Gmail/V1/Thread.html">Thread</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Gmail/V1/ThreadBase" data-name="google::gmail::v1::threadbase">
+      <a href="../Google/Gmail/V1/ThreadBase.html">ThreadBase</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Gmail/V1/ThreadList" data-name="google::gmail::v1::threadlist">
+      <a href="../Google/Gmail/V1/ThreadList.html">ThreadList</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Gmail/V1/ThreadListItem" data-name="google::gmail::v1::threadlistitem">
+      <a href="../Google/Gmail/V1/ThreadListItem.html">ThreadListItem</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Gmail/V1/TimestampConverter" data-name="google::gmail::v1::timestampconverter">
+      <a href="../Google/Gmail/V1/TimestampConverter.html">TimestampConverter</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Gmail/V1/Users" data-name="google::gmail::v1::users">
+      <a href="../Google/Gmail/V1/Users.html">Users</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="google/Google/Gmail/V1/Users/Threads" data-name="google::gmail::v1::users::threads">
+      <a href="../Google/Gmail/V1/Users/Threads.html">Threads</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Gmail/V1/Users/Threads/Format" data-name="google::gmail::v1::users::threads::format">
+      <a href="../Google/Gmail/V1/Users/Threads/Format.html">Format</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/HTTPClient" data-name="google::httpclient">
+      <a href="../Google/HTTPClient.html">HTTPClient</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/List" data-name="google::list(t)">
+      <a href="../Google/List.html">List</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="google/Google/Maps" data-name="google::maps">
+      <a href="../Google/Maps.html">Maps</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="google/Google/Maps/RouteOptimization" data-name="google::maps::routeoptimization">
+      <a href="../Google/Maps/RouteOptimization.html">RouteOptimization</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/AggregatedMetrics" data-name="google::maps::routeoptimization::aggregatedmetrics">
+      <a href="../Google/Maps/RouteOptimization/AggregatedMetrics.html">AggregatedMetrics</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/Break" data-name="google::maps::routeoptimization::break">
+      <a href="../Google/Maps/RouteOptimization/Break.html">Break</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/BreakRequest" data-name="google::maps::routeoptimization::breakrequest">
+      <a href="../Google/Maps/RouteOptimization/BreakRequest.html">BreakRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/BreakRule" data-name="google::maps::routeoptimization::breakrule">
+      <a href="../Google/Maps/RouteOptimization/BreakRule.html">BreakRule</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/DistanceLimit" data-name="google::maps::routeoptimization::distancelimit">
+      <a href="../Google/Maps/RouteOptimization/DistanceLimit.html">DistanceLimit</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/DurationDistanceMatrix" data-name="google::maps::routeoptimization::durationdistancematrix">
+      <a href="../Google/Maps/RouteOptimization/DurationDistanceMatrix.html">DurationDistanceMatrix</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/DurationLimit" data-name="google::maps::routeoptimization::durationlimit">
+      <a href="../Google/Maps/RouteOptimization/DurationLimit.html">DurationLimit</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/EncodedPolyline" data-name="google::maps::routeoptimization::encodedpolyline">
+      <a href="../Google/Maps/RouteOptimization/EncodedPolyline.html">EncodedPolyline</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/FieldReference" data-name="google::maps::routeoptimization::fieldreference">
+      <a href="../Google/Maps/RouteOptimization/FieldReference.html">FieldReference</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/FrequencyConstraint" data-name="google::maps::routeoptimization::frequencyconstraint">
+      <a href="../Google/Maps/RouteOptimization/FrequencyConstraint.html">FrequencyConstraint</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/IncompatibilityMode" data-name="google::maps::routeoptimization::incompatibilitymode">
+      <a href="../Google/Maps/RouteOptimization/IncompatibilityMode.html">IncompatibilityMode</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/InjectedSolutionConstraint" data-name="google::maps::routeoptimization::injectedsolutionconstraint">
+      <a href="../Google/Maps/RouteOptimization/InjectedSolutionConstraint.html">InjectedSolutionConstraint</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/Interval" data-name="google::maps::routeoptimization::interval">
+      <a href="../Google/Maps/RouteOptimization/Interval.html">Interval</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/LatLng" data-name="google::maps::routeoptimization::latlng">
+      <a href="../Google/Maps/RouteOptimization/LatLng.html">LatLng</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/Load" data-name="google::maps::routeoptimization::load">
+      <a href="../Google/Maps/RouteOptimization/Load.html">Load</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/LoadLimit" data-name="google::maps::routeoptimization::loadlimit">
+      <a href="../Google/Maps/RouteOptimization/LoadLimit.html">LoadLimit</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/Location" data-name="google::maps::routeoptimization::location">
+      <a href="../Google/Maps/RouteOptimization/Location.html">Location</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/Metrics" data-name="google::maps::routeoptimization::metrics">
+      <a href="../Google/Maps/RouteOptimization/Metrics.html">Metrics</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/OptimizeToursRequest" data-name="google::maps::routeoptimization::optimizetoursrequest">
+      <a href="../Google/Maps/RouteOptimization/OptimizeToursRequest.html">OptimizeToursRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/OptimizeToursResponse" data-name="google::maps::routeoptimization::optimizetoursresponse">
+      <a href="../Google/Maps/RouteOptimization/OptimizeToursResponse.html">OptimizeToursResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/OptimizeToursValidationError" data-name="google::maps::routeoptimization::optimizetoursvalidationerror">
+      <a href="../Google/Maps/RouteOptimization/OptimizeToursValidationError.html">OptimizeToursValidationError</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/PrecedenceRule" data-name="google::maps::routeoptimization::precedencerule">
+      <a href="../Google/Maps/RouteOptimization/PrecedenceRule.html">PrecedenceRule</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/RequirementMode" data-name="google::maps::routeoptimization::requirementmode">
+      <a href="../Google/Maps/RouteOptimization/RequirementMode.html">RequirementMode</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/RouteModifiers" data-name="google::maps::routeoptimization::routemodifiers">
+      <a href="../Google/Maps/RouteOptimization/RouteModifiers.html">RouteModifiers</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/Row" data-name="google::maps::routeoptimization::row">
+      <a href="../Google/Maps/RouteOptimization/Row.html">Row</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/SearchMode" data-name="google::maps::routeoptimization::searchmode">
+      <a href="../Google/Maps/RouteOptimization/SearchMode.html">SearchMode</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/Shipment" data-name="google::maps::routeoptimization::shipment">
+      <a href="../Google/Maps/RouteOptimization/Shipment.html">Shipment</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/ShipmentModel" data-name="google::maps::routeoptimization::shipmentmodel">
+      <a href="../Google/Maps/RouteOptimization/ShipmentModel.html">ShipmentModel</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/ShipmentRoute" data-name="google::maps::routeoptimization::shipmentroute">
+      <a href="../Google/Maps/RouteOptimization/ShipmentRoute.html">ShipmentRoute</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/ShipmentTypeIncompatibility" data-name="google::maps::routeoptimization::shipmenttypeincompatibility">
+      <a href="../Google/Maps/RouteOptimization/ShipmentTypeIncompatibility.html">ShipmentTypeIncompatibility</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/ShipmentTypeRequirement" data-name="google::maps::routeoptimization::shipmenttyperequirement">
+      <a href="../Google/Maps/RouteOptimization/ShipmentTypeRequirement.html">ShipmentTypeRequirement</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Maps/RouteOptimization/SkippedShipment" data-name="google::maps::routeoptimization::skippedshipment">
+      <a href="../Google/Maps/RouteOptimization/SkippedShipment.html">SkippedShipment</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="google/Google/Maps/RouteOptimization/SkippedShipment/Reason" data-name="google::maps::routeoptimization::skippedshipment::reason">
+      <a href="../Google/Maps/RouteOptimization/SkippedShipment/Reason.html">Reason</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/SkippedShipment/Reason/Code" data-name="google::maps::routeoptimization::skippedshipment::reason::code">
+      <a href="../Google/Maps/RouteOptimization/SkippedShipment/Reason/Code.html">Code</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/SolvingMode" data-name="google::maps::routeoptimization::solvingmode">
+      <a href="../Google/Maps/RouteOptimization/SolvingMode.html">SolvingMode</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/TimeWindow" data-name="google::maps::routeoptimization::timewindow">
+      <a href="../Google/Maps/RouteOptimization/TimeWindow.html">TimeWindow</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/Transition" data-name="google::maps::routeoptimization::transition">
+      <a href="../Google/Maps/RouteOptimization/Transition.html">Transition</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/TransitionAttributes" data-name="google::maps::routeoptimization::transitionattributes">
+      <a href="../Google/Maps/RouteOptimization/TransitionAttributes.html">TransitionAttributes</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/TravelMode" data-name="google::maps::routeoptimization::travelmode">
+      <a href="../Google/Maps/RouteOptimization/TravelMode.html">TravelMode</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/UnloadingPolicy" data-name="google::maps::routeoptimization::unloadingpolicy">
+      <a href="../Google/Maps/RouteOptimization/UnloadingPolicy.html">UnloadingPolicy</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/Vehicle" data-name="google::maps::routeoptimization::vehicle">
+      <a href="../Google/Maps/RouteOptimization/Vehicle.html">Vehicle</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/VehicleLoad" data-name="google::maps::routeoptimization::vehicleload">
+      <a href="../Google/Maps/RouteOptimization/VehicleLoad.html">VehicleLoad</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/Visit" data-name="google::maps::routeoptimization::visit">
+      <a href="../Google/Maps/RouteOptimization/Visit.html">Visit</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/VisitRequest" data-name="google::maps::routeoptimization::visitrequest">
+      <a href="../Google/Maps/RouteOptimization/VisitRequest.html">VisitRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Maps/RouteOptimization/Waypoint" data-name="google::maps::routeoptimization::waypoint">
+      <a href="../Google/Maps/RouteOptimization/Waypoint.html">Waypoint</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/People" data-name="google::people">
+      <a href="../Google/People.html">People</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="google/Google/People/V1" data-name="google::people::v1">
+      <a href="../Google/People/V1.html">V1</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="google/Google/People/V1/GetPersonResponse" data-name="google::people::v1::getpersonresponse">
+      <a href="../Google/People/V1/GetPersonResponse.html">GetPersonResponse</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/People/V1/GetPersonResponse/EmailAddress" data-name="google::people::v1::getpersonresponse::emailaddress">
+      <a href="../Google/People/V1/GetPersonResponse/EmailAddress.html">EmailAddress</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/People/V1/GetPersonResponse/FieldMetadata" data-name="google::people::v1::getpersonresponse::fieldmetadata">
+      <a href="../Google/People/V1/GetPersonResponse/FieldMetadata.html">FieldMetadata</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/People/V1/GetPersonResponse/FieldMetadata/Source" data-name="google::people::v1::getpersonresponse::fieldmetadata::source">
+      <a href="../Google/People/V1/GetPersonResponse/FieldMetadata/Source.html">Source</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/People/V1/GetPersonResponse/Metadata" data-name="google::people::v1::getpersonresponse::metadata">
+      <a href="../Google/People/V1/GetPersonResponse/Metadata.html">Metadata</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/People/V1/GetPersonResponse/Metadata/DomainProfile" data-name="google::people::v1::getpersonresponse::metadata::domainprofile">
+      <a href="../Google/People/V1/GetPersonResponse/Metadata/DomainProfile.html">DomainProfile</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/People/V1/GetPersonResponse/Metadata/Profile" data-name="google::people::v1::getpersonresponse::metadata::profile">
+      <a href="../Google/People/V1/GetPersonResponse/Metadata/Profile.html">Profile</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/People/V1/GetPersonResponse/Metadata/Source" data-name="google::people::v1::getpersonresponse::metadata::source">
+      <a href="../Google/People/V1/GetPersonResponse/Metadata/Source.html">Source</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/People/V1/GetPersonResponse/Name" data-name="google::people::v1::getpersonresponse::name">
+      <a href="../Google/People/V1/GetPersonResponse/Name.html">Name</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/People/V1/GetPersonResponse/Photo" data-name="google::people::v1::getpersonresponse::photo">
+      <a href="../Google/People/V1/GetPersonResponse/Photo.html">Photo</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Places" data-name="google::places">
+      <a href="../Google/Places.html">Places</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="google/Google/Places/V1" data-name="google::places::v1">
+      <a href="../Google/Places/V1.html">V1</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Places/V1/Place" data-name="google::places::v1::place">
+      <a href="../Google/Places/V1/Place.html">Place</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Places/V1/SearchRequest" data-name="google::places::v1::searchrequest">
+      <a href="../Google/Places/V1/SearchRequest.html">SearchRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Places/V1/SearchResponse" data-name="google::places::v1::searchresponse">
+      <a href="../Google/Places/V1/SearchResponse.html">SearchResponse</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/RequestError" data-name="google::requesterror">
+      <a href="../Google/RequestError.html">RequestError</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Resource" data-name="google::resource">
+      <a href="../Google/Resource.html">Resource</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/ServiceAccount" data-name="google::serviceaccount">
+      <a href="../Google/ServiceAccount.html">ServiceAccount</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/ServiceAccount/Key" data-name="google::serviceaccount::key">
+      <a href="../Google/ServiceAccount/Key.html">Key</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Task" data-name="google::task">
+      <a href="../Google/Task.html">Task</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Task/Link" data-name="google::task::link">
+      <a href="../Google/Task/Link.html">Link</a>
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/Task/Status" data-name="google::task::status">
+      <a href="../Google/Task/Status.html">Status</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/Google/TaskList" data-name="google::tasklist">
+      <a href="../Google/TaskList.html">TaskList</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Tasks" data-name="google::tasks">
+      <a href="../Google/Tasks.html">Tasks</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="google/Google/Tasks/V1" data-name="google::tasks::v1">
+      <a href="../Google/Tasks/V1.html">V1</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Tasks/V1/TaskLists" data-name="google::tasks::v1::tasklists">
+      <a href="../Google/Tasks/V1/TaskLists.html">TaskLists</a>
+      
+    </li>
+  
+  <li class="parent " data-id="google/Google/Tasks/V1/Tasks" data-name="google::tasks::v1::tasks">
+      <a href="../Google/Tasks/V1/Tasks.html">Tasks</a>
+      
+        <ul>
+  
+  <li class=" " data-id="google/Google/Tasks/V1/Tasks/List" data-name="google::tasks::v1::tasks::list(t)">
+      <a href="../Google/Tasks/V1/Tasks/List.html">List</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="google/URI" data-name="uri">
+      <a href="../URI.html">URI</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Google::<wbr>Maps
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      maps.cr
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

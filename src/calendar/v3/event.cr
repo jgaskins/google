@@ -67,7 +67,7 @@ struct Google::Calendar::V3
       @attendees_omitted = nil,
       @extended_properties = nil,
       @reminders = nil,
-      @event_type = nil
+      @event_type = nil,
     )
     end
 

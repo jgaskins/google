@@ -10,7 +10,7 @@ module Google
     field items : Array(T)
     field next_page_token : String?
 
-    def each
+    def each(&)
       items.each do |item|
         yield item
       end

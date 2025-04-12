@@ -30,11 +30,11 @@ module Google
       end
     end
 
-    def get(path : String, headers = HTTP::Headers.new)
+    def get(path : String, headers = HTTP::Headers.new, &)
       @pool.checkout(&.get(path, headers: headers) { |response| yield response })
     end
 
-    def post(path : String, body, headers = HTTP::Headers.new)
+    def post(path : String, body, headers = HTTP::Headers.new, &)
       @pool.checkout(&.post(path, headers: headers, body: body) { |response| yield response })
     end
 
@@ -107,7 +107,7 @@ module Google
         end
       end
 
-      def http_get(path : String)
+      def http_get(path : String, &)
         client.get("/storage/v1/#{path}") do |response|
           if response.success?
             yield response.body_io
@@ -117,7 +117,7 @@ module Google
         end
       end
 
-      def post(path : String, body : IO)
+      def post(path : String, body : IO, &)
         client.post "/storage/v1/#{path}", body: body do |response|
           if response.success?
             yield response.body_io
@@ -159,7 +159,7 @@ module Google
         http_get "b/#{bucket}/o/#{object}", as: Object
       end
 
-      def get_data(bucket : String, object : String)
+      def get_data(bucket : String, object : String, &)
         http_get "b/#{bucket}/o/#{object}?alt=media" do |io|
           yield io
         end
@@ -194,7 +194,7 @@ module Google
         completed : TimeRange? = nil,
         show_completed : Bool? = nil,
         show_hidden : Bool? = nil,
-        show_deleted : Bool? = nil
+        show_deleted : Bool? = nil,
       )
         list task_list.id, token,
           max_results: max_results,
@@ -214,7 +214,7 @@ module Google
         completed : TimeRange? = nil,
         show_completed : Bool? = nil,
         show_hidden : Bool? = nil,
-        show_deleted : Bool? = nil
+        show_deleted : Bool? = nil,
       )
         params = URI::Params.new
         params["maxResults"] = max_results.to_s if max_results

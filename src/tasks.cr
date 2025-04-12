@@ -43,7 +43,7 @@ module Google
         completed : TimeRange? = nil,
         show_completed : Bool? = nil,
         show_hidden : Bool? = nil,
-        show_deleted : Bool? = nil
+        show_deleted : Bool? = nil,
       )
         list task_list.id, token,
           max_results: max_results,
@@ -63,7 +63,7 @@ module Google
         completed : TimeRange? = nil,
         show_completed : Bool? = nil,
         show_hidden : Bool? = nil,
-        show_deleted : Bool? = nil
+        show_deleted : Bool? = nil,
       )
         params = URI::Params.new
         params["maxResults"] = max_results.to_s if max_results

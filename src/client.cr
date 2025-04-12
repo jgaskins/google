@@ -22,7 +22,7 @@ module Google
       @client_id,
       @client_secret,
       @redirect_uri,
-      @default_headers = DEFAULT_HEADERS.dup
+      @default_headers = DEFAULT_HEADERS.dup,
     )
       uri = URI.parse("https://www.googleapis.com")
       @pool = DB::Pool.new(DB::Pool::Options.new(initial_pool_size: 0, max_idle_pool_size: 25)) do
@@ -33,7 +33,7 @@ module Google
     def oauth2_endpoint(
       scope : String,
       access_type : AccessType? = nil,
-      prompt : Prompt? = nil
+      prompt : Prompt? = nil,
     ) : URI
       oauth = OAuth2::Client.new(
         client_id: client_id,

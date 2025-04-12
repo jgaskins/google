@@ -11,11 +11,11 @@ struct Google::Calendar::V3::CalendarList
     field next_sync_token : String?
     field items : Array(Entry)
 
-    def each
+    def each(&)
       items.each { |item| yield item }
     end
 
-    def sort_by
+    def sort_by(&)
       items.sort_by { |item| yield item }
     end
   end

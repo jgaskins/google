@@ -11,7 +11,7 @@ struct Google::Calendar::V3
       time_min : Time? = nil,
       time_max : Time? = nil,
       time_zone : String = "",
-      single_events : Bool? = nil
+      single_events : Bool? = nil,
     )
       list calendar.id, token,
         page_size: page_size,
@@ -29,7 +29,7 @@ struct Google::Calendar::V3
       time_min : Time? = nil,
       time_max : Time? = nil,
       time_zone : String = "",
-      single_events : Bool? = nil
+      single_events : Bool? = nil,
     )
       params = URI::Params{
         "timeMin"      => time_min.try(&.to_rfc3339).to_s,
@@ -74,7 +74,7 @@ struct Google::Calendar::V3
       send_updates : SendUpdates? = nil,
       visibility : Event::Visibility? = nil,
       status : Event::Status? = nil,
-      token : String
+      token : String,
     )
       request = EventsInsertRequest.new(
         start: Timestamp.new(date_time: starts_at, time_zone: starts_at.location.to_s),
@@ -120,7 +120,7 @@ struct Google::Calendar::V3
         @attendees = nil,
         @attachments = nil,
         @visibility = nil,
-        @status = nil
+        @status = nil,
       )
       end
     end

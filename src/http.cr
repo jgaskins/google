@@ -2,7 +2,7 @@ module Google
   class HTTPClient < ::HTTP::Client
     Log = ::Log.for(Google::Client)
 
-    def around_exec(request : ::HTTP::Request)
+    def around_exec(request : ::HTTP::Request, &)
       start = Time.monotonic
       begin
         response = yield

@@ -24,7 +24,7 @@ module Google
         end
       end
 
-      def http_get(path : String, token : String, as type = CommentList)
+      def http_get(path : String, token : String, as type = CommentList, &)
         client.get("/drive/v3/#{path}", token: token) do |response|
           if response.success?
             yield response.body_io
@@ -103,25 +103,25 @@ module Google
         http_get "files/#{id}?fields=#{FILE_FIELDS}", token: token, as: File
       end
 
-      def get_contents(file : File, token : String)
+      def get_contents(file : File, token : String, &)
         get_contents file.id, token: token do |io|
           yield io
         end
       end
 
-      def get_contents(id : String, token : String)
+      def get_contents(id : String, token : String, &)
         http_get "files/#{id}?alt=media", token: token do |io|
           yield io
         end
       end
 
-      def export(file : File, mime_type : String, token : String)
+      def export(file : File, mime_type : String, token : String, &)
         export file.id, mime_type, token do |io|
           yield io
         end
       end
 
-      def export(id : String, mime_type : String, token : String)
+      def export(id : String, mime_type : String, token : String, &)
         http_get "files/#{id}/export?mimeType=#{URI.encode_www_form(mime_type)}", token: token do |io|
           yield io
         end
@@ -134,7 +134,7 @@ module Google
         token : String,
         *,
         page_size : Int32? = nil,
-        page_token : String? = nil
+        page_token : String? = nil,
       )
         list file.id, token: token, page_size: page_size, page_token: page_token
       end
@@ -177,7 +177,7 @@ module Google
       @[JSON::Field(ignore: true)]
       protected property page_size : Int32?
 
-      def each : Nil
+      def each(&) : Nil
         drives.each do |item|
           yield item
         end
@@ -368,7 +368,7 @@ module Google
       @[JSON::Field(ignore: true)]
       protected property page_size : Int32?
 
-      def each : Nil
+      def each(&) : Nil
         comments.each do |item|
           yield item
         end

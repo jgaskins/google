@@ -12,7 +12,7 @@ struct Google::Calendar::V3
       next_page_token : String? = nil,
       max_results : Int? = nil,
       show_deleted : Bool? = nil,
-      show_hidden : Bool? = nil
+      show_hidden : Bool? = nil,
     )
       params = URI::Params.new
       params["maxResults"] = max_results.to_s unless max_results.nil?

@@ -10,7 +10,8 @@ module Google
   module GenerativeAI
     class Client
       private DEFAULT_URI = URI.parse("https://generativelanguage.googleapis.com/")
-      @api_key : String
+      protected getter api_key : String
+      protected getter http : HTTP::Client
 
       def initialize(@api_key, @base_uri = DEFAULT_URI)
         @http = HTTPClient.new(base_uri)
@@ -35,11 +36,17 @@ module Google
 
         model = get("/v1beta/models/#{name}", return: Model::V1Beta(typeof(response_schema)))
         model.client = self
-        model.system_instruction = ContentTransformer.new.content(system_instruction)
+        if system_instruction
+          model.system_instruction = ContentTransformer.new.content(system_instruction)
+        end
         model.temperature = temperature
         model.response_schema = response_schema.to_json if response_schema
 
         model
+      end
+
+      def files
+        Files.new self
       end
 
       {% for method in %w[get post] %}
@@ -185,6 +192,73 @@ module Google
 
       protected def with_client(@client) : self
         self
+      end
+    end
+
+    struct Files
+      getter client : Client
+      getter http : HTTP::Client
+      getter api_key : String
+
+      def initialize(@client, @http = client.http, @api_key = client.api_key)
+      end
+
+      def upload(file : Path, content_type : String)
+        bytesize = File.size(file).to_s
+        params = URI::Params{"key" => client.api_key}
+        preflight_response = http.post "/upload/v1beta/files?#{params}",
+          headers: HTTP::Headers{
+            "x-goog-upload-protocol"              => "resumable",
+            "x-goog-upload-command"               => "start",
+            "x-goog-upload-header-content-length" => bytesize,
+            "x-goog-upload-header-content-type"   => content_type,
+            "content-type"                        => "application/json",
+          },
+          body: {
+            file: {
+              display_name: File.basename(file),
+            },
+          }.to_json
+
+        if preflight_response.success? && (upload_url = preflight_response.headers["x-goog-upload-url"])
+          File.open file do |body|
+            response = http.post upload_url,
+              headers: HTTP::Headers{
+                "x-goog-upload-offset"  => "0",
+                "x-goog-upload-command" => "upload, finalize",
+              },
+              body: body
+
+            if response.success?
+              Upload.from_json response.body
+            else
+              raise Error.new(response.body)
+            end
+          end
+        else
+          raise Error.new(preflight_response.body)
+        end
+      end
+
+      struct Upload
+        include Resource
+        field file : File
+
+        struct File
+          include Resource
+
+          field name : String
+          field display_name : String
+          field mime_type : String
+          field size_bytes : String
+          field create_time : Time
+          field update_time : Time
+          field expiration_time : Time
+          field sha256_hash : String
+          field uri : String
+          field state : String
+          field source : String
+        end
       end
     end
 
@@ -488,8 +562,21 @@ module Google
         content Content.new(parts: parts)
       end
 
+      def content(file : Files::Upload::File) : Content
+        content part(file)
+      end
+
       def content(content : Content) : Content
         content
+      end
+
+      def part(file : Files::Upload::File) : Content::Part
+        Content::Part.new(
+          Content::FileData.new(
+            mime_type: file.mime_type,
+            file_uri: file.uri,
+          )
+        )
       end
 
       def parts(strings : Array(String)) : Array(Content::Part)
@@ -526,6 +613,9 @@ module Google
           end
         end
       end
+    end
+
+    class Error < ::Google::Error
     end
   end
 end

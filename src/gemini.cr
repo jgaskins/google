@@ -20,6 +20,8 @@ module Google
           params = request.query_params
           params["key"] = api_key
           request.query = params.to_s
+          request.headers["Accept"] = "application/json"
+          request.headers["User-Agent"] = "https://github.com/jgaskins/google"
         end
       end
 
@@ -105,7 +107,6 @@ module Google
       @headers = HTTP::Headers{
         "accept"       => "application/json",
         "content-type" => "application/json",
-        "user-agent"   => "https://github.com/jgaskins/google",
       }
 
       def generate(contents : String | Array, generation_config : GenerationConfig? = self.generation_config, tools : Tools? = nil)
@@ -204,7 +205,7 @@ module Google
       end
 
       def upload(file : Path, content_type : String)
-        bytesize = File.size(file).to_s
+        bytesize = ::File.size(file).to_s
         params = URI::Params{"key" => client.api_key}
         preflight_response = http.post "/upload/v1beta/files?#{params}",
           headers: HTTP::Headers{
@@ -216,12 +217,12 @@ module Google
           },
           body: {
             file: {
-              display_name: File.basename(file),
+              display_name: ::File.basename(file),
             },
           }.to_json
 
         if preflight_response.success? && (upload_url = preflight_response.headers["x-goog-upload-url"])
-          File.open file do |body|
+          ::File.open file do |body|
             response = http.post upload_url,
               headers: HTTP::Headers{
                 "x-goog-upload-offset"  => "0",
@@ -240,24 +241,69 @@ module Google
         end
       end
 
+      def list(page_size : Int? = nil, page_token : String? = nil)
+        params = URI::Params.new
+        params["pageSize"] = page_size.to_s if page_size
+        params["pageToken"] = page_token if page_token
+
+        response = http.get "/v1beta/files/?#{params}"
+
+        case response.status
+        when .success?
+          JSON.parse response.body
+        when .client_error?, .server_error?
+          raise Error.new(response.body)
+        else
+          raise Error.new("Unexpected response from Google Gemini API: #{response.status_code} #{response.status}")
+        end
+      end
+
+      def get(name : String)
+        response = http.get "/v1beta/files/#{name.lchop("files/")}"
+        case response.status
+        when .success?
+          File.from_json response.body
+        when .not_found?
+          nil
+        when .client_error?, .server_error?
+          raise Error.new(response.body)
+        else
+          raise Error.new("Unexpected response from Google Gemini API: #{response.status_code} #{response.status}")
+        end
+      end
+
       struct Upload
         include Resource
+
         field file : File
+      end
 
-        struct File
-          include Resource
+      struct File
+        include Resource
 
-          field name : String
-          field display_name : String
-          field mime_type : String
-          field size_bytes : String
-          field create_time : Time
-          field update_time : Time
-          field expiration_time : Time
-          field sha256_hash : String
-          field uri : String
-          field state : String
-          field source : String
+        field name : String
+        field display_name : String
+        field mime_type : String
+        field size_bytes : String
+        field create_time : Time
+        field update_time : Time
+        field expiration_time : Time
+        field sha256_hash : String
+        field uri : String
+        field state : State
+        field source : Source
+
+        enum State
+          STATE_UNSPECIFIED
+          PROCESSING
+          ACTIVE
+          FAILED
+        end
+
+        enum Source
+          SOURCE_UNSPECIFIED
+          UPLOADED
+          GENERATED
         end
       end
     end
@@ -394,7 +440,6 @@ module Google
         end
 
         def to_s(io : IO) : Nil
-          # pp "Part": self
           io << text || inline_data || function_call || function_response || file_data || executable_code || code_execution_result
         end
       end
@@ -562,7 +607,7 @@ module Google
         content Content.new(parts: parts)
       end
 
-      def content(file : Files::Upload::File) : Content
+      def content(file : Files::File) : Content
         content part(file)
       end
 
@@ -570,7 +615,7 @@ module Google
         content
       end
 
-      def part(file : Files::Upload::File) : Content::Part
+      def part(file : Files::File) : Content::Part
         Content::Part.new(
           Content::FileData.new(
             mime_type: file.mime_type,
